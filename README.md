@@ -10,8 +10,12 @@ to install QMK on Linux.
 
 When you get to the "Open keymap.c In Your Favorite Text Editor" paragraph
 in "Building Your First Firmware", substitute keymap.c with the file in this
-repo.
+repo. Then, compile and flash the firmware as below:
 
+```
+qmk compile -kb kbdfans/kbd75/rev2 -km ISO-swapesc -j 8
+qmk flash -kb kbdfans/kbd75/rev2 -km ISO-swapesc
+```
 
 NOTE: qmk compile and qmk flash are a bit weird with the paths they want,
 e.g. in
@@ -32,4 +36,4 @@ copypasted into the keyboard directory of QMK, e.g.
 keyboards/kbdfans/kbd75/rev2/config.h
 ```
 For reference, the only non-standard thing is a higher than default debouncing
-delay (7 ms instead of 5, to avoid occasional double presses).
+delay (to avoid occasional double presses).
